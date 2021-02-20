@@ -1085,12 +1085,7 @@ func MakeAbsoluteAssetURL(appURL string, staticURLPrefix string) string {
 	}
 
 	if err == nil && parsedPrefix.Hostname() == "" {
-		if staticURLPrefix == "" {
-			return strings.TrimSuffix(appURL, "/")
-		}
-
-		// StaticURLPrefix is just a path
-		return strings.TrimSuffix(appURL, "/") + strings.TrimSuffix(staticURLPrefix, "/")
+		return strings.TrimSuffix(appURL, "/");
 	}
 
 	return strings.TrimSuffix(staticURLPrefix, "/")
